@@ -17,6 +17,8 @@ GET     /authenticated                          Authenticated.authenticated
 
 GET     /logout                                 Authenticated.logout
 
+POST    /idp-assertion-consumer                 Authenticated.pingAssertionCallback
+
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

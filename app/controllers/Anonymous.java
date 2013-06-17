@@ -1,5 +1,6 @@
 package controllers;
 
+import play.Play;
 import play.mvc.Controller;
 
 public class Anonymous extends Controller {
@@ -9,7 +10,9 @@ public class Anonymous extends Controller {
     }
     
     public static void login() {
-        renderTemplate("Anonymous/login.html");
+    	
+    	String pingLoginUrl = Play.configuration.getProperty("ping.login.url");
+    	redirect(pingLoginUrl);
     }
 
 }

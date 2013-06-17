@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.IOException;
+
 import play.mvc.Controller;
 
 public class Authenticated extends Controller {
@@ -11,4 +13,7 @@ public class Authenticated extends Controller {
         renderTemplate("Authenticated/logout.html");
     }
 
+    public static void pingAssertionCallback(String body) {
+        renderTemplate("Authenticated/assertion.html", request, body);
+    }
 }
